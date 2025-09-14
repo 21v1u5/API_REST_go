@@ -39,7 +39,7 @@ func GetTasks(w http.ResponseWriter, r *http.Request) {
 
 func UpdateTask(w http.ResponseWriter, r *http.Request) {
 	var task Task
-	if err := json.NewDecoder(r.body).Decode(&task); err != nill {
+	if err := json.NewDecoder(r.Body).Decode(&task); err != nil {
 		HandleError(w, http.StatusBadRequest, err.Error())
 		return
 	}
