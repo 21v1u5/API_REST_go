@@ -59,8 +59,8 @@ func UpdateTask(w http.ResponseWriter, r *http.Request) {
 }
 
 func DeleteTask(w http.ResponseWriter, r *http.Request) {
-	idstr := r.URL.Query().Get("ID")
-	id, err := strconv.Atoi(idstr)
+	idStr := r.URL.Query().Get("id")
+	id, err := strconv.Atoi(idStr)
 	if err != nil {
 		HandleError(w, http.StatusBadRequest, "Invalid Task ID")
 		return
